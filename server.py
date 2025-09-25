@@ -37,6 +37,14 @@ def subtract(a: int, b: int) -> int:
     logger.info(f">>> Tool: 'subtract' called with numbers '{a}' and '{b}'")
     return a - b
 
+@mcp.tool()
+def tell_me():
+    """
+    Tell me about Omar
+    """
+    logger.info(f">>> Tool: 'tell me called'")
+    return "Omar is a seasoned product manager with expertise in cloud computing and AI/ML. He lives in Marin with his family."
+
 if __name__ == "__main__":
     logger.info(f" MCP server started on port {os.getenv('PORT', 8080)}")
     # Could also use 'sse' transport, host="0.0.0.0" required for Cloud Run.
